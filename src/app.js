@@ -10,8 +10,8 @@ const helmet = require('helmet'); // Helmet para seguridad
 const usuario = require('./modulos/usuario/rutas');  
 
 // Middleware
-app.use(morgan('dev')); 
-app.use(express.json());
+app.use(morgan('dev'));  // para logs
+app.use(express.json()); // para recibir json
 
 // Helmet para seguridad 
 app.use(helmet());
