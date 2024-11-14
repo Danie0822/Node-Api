@@ -26,10 +26,10 @@ function todos(tabla) {
     return ejecutarConsulta(sql, [tabla]);
 }
 
-// Función para obtener todos los registros de una tabla ordenados por ID
-function obtenerTodosOrdenadosPorId(tabla, campoId) {
-    const sql = `SELECT * FROM ?? ORDER BY ?? ASC`;
-    return ejecutarConsulta(sql, [tabla, campoId]);
+// Función para obtener un solo registro de una tabla por su ID
+function uno(tabla, id, campoIdentificacion) {
+    const sql = `SELECT * FROM ?? WHERE ?? = ?`;
+    return ejecutarConsulta(sql, [tabla, campoIdentificacion, id]);
 }
 
 // Función para agregar un nuevo registro a una tabla
@@ -56,6 +56,6 @@ module.exports = {
     todos,
     agregar,
     eliminar,
-    obtenerTodosOrdenadosPorId, 
+    uno, 
     actualizar
 };

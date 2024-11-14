@@ -7,7 +7,7 @@ module.exports = function (db) {
         return db.todos(TABLE_NAME);
     }
     async function obtenerPorId(id) {
-        return db.obtenerTodosOrdenadosPorId(TABLE_NAME, id);
+        return db.uno(TABLE_NAME, id, ID_FIELD);
     }
     async function agregar(data) {
         return db.agregar(TABLE_NAME, data);
